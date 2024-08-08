@@ -4,4 +4,5 @@ import java.util.List;
 
 public class PoligonModel {
     private List<Poligon> poligons;
+    private List<Texture> textures;
 }
