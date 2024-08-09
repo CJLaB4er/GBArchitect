@@ -3,7 +3,7 @@ package main.java.ru.geekbrains.architect.lesson1.modelElements;
 import java.awt.*;
 import java.util.List;
 
-public class Poligon {
+class Poligon {
 
     private List<Point> points;
 
