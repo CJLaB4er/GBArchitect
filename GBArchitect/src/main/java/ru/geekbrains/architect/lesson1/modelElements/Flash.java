@@ -7,26 +7,6 @@ public class Flash {
     private float power;
 
 
-    class Angle3D {
-        double x, y, z;
-
-        public Angle3D(double x, double y, double z) {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-        }
-    }
-
-    class Color {
-        int red, green, blue;
-
-        public Color(int red, int green, int blue) {
-            this.red = red;
-            this.green = green;
-            this.blue = blue;
-        }
-    }
-
     public Flash(Point3D location, Angle3D angle, Color color, float power) {
         this.location = location;
         this.angle = angle;
@@ -48,4 +28,6 @@ public class Flash {
     private void move(Point3D point3D) {
 
     }
+
+
 }
