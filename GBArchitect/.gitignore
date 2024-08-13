@@ -2,6 +2,7 @@
 .idea/
 GBArchitect.iml
 
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
