@@ -1,0 +1,21 @@
+package main.java.ru.geekbrains.architect.lesson5;
+
+/**
+ * Интерфейс UI (User interface)
+ */
+public interface UILayer {
+
+    void openProject(String fileName);
+
+    void shoProjectSettings();
+
+    void saveProject();
+
+    void printAllModels();
+
+    void printAllTextures();
+
+    void renderAll();
+
+    void renderModel(int id);
+}
