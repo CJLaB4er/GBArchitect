@@ -17,4 +17,6 @@ interface BusinessLogicalLayer {
     void renderModel(Model3D model3D);
 
     void renderAllModels();
+
+    void removeModel(Model3D model3D);
 }

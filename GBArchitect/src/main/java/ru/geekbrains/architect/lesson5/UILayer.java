@@ -7,7 +7,7 @@ public interface UILayer {
 
     void openProject(String fileName);
 
-    void shoProjectSettings();
+    void showProjectSettings();
 
     void saveProject();
 
@@ -17,5 +17,7 @@ public interface UILayer {
 
     void renderAll();
 
-    void renderModel(int id);
+    void renderModel(int i);
+
+    void removeModel(int i);
 }

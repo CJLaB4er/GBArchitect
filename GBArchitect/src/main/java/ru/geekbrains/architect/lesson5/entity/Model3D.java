@@ -8,7 +8,7 @@ import java.util.Collection;
  */
 
 public class Model3D implements Entity {
-    private int counter = 10_000;
+    private static int counter = 10_000;
     private int id;
     private Collection<Texture> textures = new ArrayList<>();
 

@@ -44,6 +44,11 @@ public class EditorBusinessLogicalLayaer implements BusinessLogicalLayer {
         }
     }
 
+    @Override
+    public void removeModel(Model3D model3D) {
+        databaseAccess.removeEntity(model3D);
+    }
+
     private void processsRender(Model3D model3D) {
         try {
 

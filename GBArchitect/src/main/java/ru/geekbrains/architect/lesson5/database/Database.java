@@ -13,4 +13,6 @@ public interface Database {
     void save();
 
     Collection<Entity> getAll();
+
+    void remove(Entity entity);
 }

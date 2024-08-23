@@ -57,4 +57,9 @@ public class EditorDatabase implements Database {
         }
         entities.add(model3D);
     }
+
+    @Override
+    public void remove(Entity entity) {
+        entities.remove(entity);
+    }
 }

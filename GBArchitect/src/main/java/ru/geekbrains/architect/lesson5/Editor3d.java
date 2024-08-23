@@ -4,6 +4,7 @@ import main.java.ru.geekbrains.architect.lesson5.database.Database;
 import main.java.ru.geekbrains.architect.lesson5.database.DatabaseAccess;
 import main.java.ru.geekbrains.architect.lesson5.database.EditorDatabase;
 import main.java.ru.geekbrains.architect.lesson5.database.EditorDatabaseAccess;
+import main.java.ru.geekbrains.architect.lesson5.entity.Entity;
 import main.java.ru.geekbrains.architect.lesson5.entity.Model3D;
 import main.java.ru.geekbrains.architect.lesson5.entity.Texture;
 
@@ -16,13 +17,10 @@ import java.util.ArrayList;
 public class Editor3d implements UILayer {
 
     private ProjectFile projectFile;
-    private BusinessLogicalLayer businessLogicalLayer;
-    private DatabaseAccess databaseAccess;
     private Database database;
+    private DatabaseAccess databaseAccess;
+    private BusinessLogicalLayer businessLogicalLayer;
 
-//    public Editor3d(BusinessLogicalLayer businessLogicalLayer) {
-//        this.businessLogicalLayer = businessLogicalLayer;
-//    }
 
     private void initialize() {
         database = new EditorDatabase(projectFile);
@@ -38,7 +36,7 @@ public class Editor3d implements UILayer {
 
 
     @Override
-    public void shoProjectSettings() {
+    public void showProjectSettings() {
 
         // Предусловие
         checkProjectFile();
@@ -124,4 +122,19 @@ public class Editor3d implements UILayer {
         long endTime = System.currentTimeMillis() - startTime;
         System.out.printf("Операция выполнена за %d мс.\n", endTime);
     }
+
+    @Override
+    public void removeModel(int i) {
+        // Предусловие
+        checkProjectFile();
+
+        ArrayList<Model3D> models = (ArrayList<Model3D>) businessLogicalLayer.getAllModels();
+        if (i < 0 || i > models.size() - 1) {
+            throw new RuntimeException("Номер модели указан некорректно.");
+        }
+        businessLogicalLayer.removeModel(models.get(i));
+        System.out.printf("Сущность " + models.get(i) + " удалена из базы данных\n");
+    }
+
+
 }

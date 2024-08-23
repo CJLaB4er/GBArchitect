@@ -18,6 +18,8 @@ public class Programm {
      * <p>
      * Предложить варианты связывания всех уровней - сценарии использования. 3-4 сценария.
      * Сквозная функция - создать новую 3D модель, сделать рендер для печати на принтере ...
+     * <p>
+     * HW: реализовать удаление элемента из базы данных
      */
 
     public static void main(String[] args) {
@@ -36,8 +38,9 @@ public class Programm {
         System.out.println("3. Отобразить параметры проекта");
         System.out.println("4. Отобразить все модели проекта");
         System.out.println("5. Отобразить все текстуры проекта");
-        System.out.println("6. Выполнить ренер всех моделей");
+        System.out.println("6. Выполнить рендер всех моделей");
         System.out.println("7. Выполнить рендер модели");
+        System.out.println("8. Удалить модель из базы данных");
         System.out.println("0. ЗАВЕРШЕНИЕ РАБОТЫ ПРИЛОЖЕНИЯ");
         System.out.println("Пожалуйта выберите пункт меню: ");
     }
@@ -59,7 +62,7 @@ public class Programm {
                         System.out.println("Проект успешно открыт.");
                         break;
                     case 3:
-                        editor3d.shoProjectSettings();
+                        editor3d.showProjectSettings();
                         break;
                     case 4:
                         editor3d.printAllModels();
@@ -80,14 +83,24 @@ public class Programm {
                             System.out.println("Номер модели указан неверно");
                         }
                         break;
+                    case 8:
+                        editor3d.printAllModels();
+                        System.out.println("Укажите номен модели для удаления: ");
+                        if (scanner.hasNextInt()) {
+                            int modelNo = scanner.nextInt();
+                            scanner.nextLine();
+                            editor3d.removeModel(modelNo);
+                        } else {
+                            System.out.println("Номер модели указан неверно");
+                        }
+                        break;
                     default:
                         System.out.println("Укажите корректный пункт меню");
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-        }
-        else {
+        } else {
             System.out.println("Укажите коректный пункт меню");
             scanner.nextLine();
         }
